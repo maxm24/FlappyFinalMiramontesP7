@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Bird : MonoBehaviour { 
+public class Bird : MonoBehaviour 
+{ 
 
 public float upForce = 200f;
+
 private bool isDead = false;
 private Rigidbody2D rb2d;
-    private Animator anim;
+private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +36,6 @@ private Rigidbody2D rb2d;
     {
         isDead = true;
         anim.SetTrigger("Die");
+        GameControl.Instance.BirdDied();
     }
 }
